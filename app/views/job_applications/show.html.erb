@@ -33,6 +33,6 @@ for Step 1?</strong>
   <%= @application.answer3 %>
 </p>
 <br>
-<% if signed_in? %> <%= link_to 'Back', job_applications_path %> <% end %>     <%= link_to 'Edit', edit_job_application_path(@application) %>
+<% if signed_in? %> <%= link_to 'Back', job_applications_path %> <% end %>
 <br>
 <%= link_to 'Home', controller: 'welcome' %>

@@ -2,9 +2,15 @@
 <hr>
 <br>
 <p>
-App Manager is an app created to submit, view, and manage job applications submitted by potential future employees. Click the 'Create Application' link below to submit a job application. 
+App Manager is an app created to submit, view, and manage job applications for potential future employees. Click the 'Create Application' link below to submit a job application. 
 </p>
-<%= link_to 'Create Application', controller: 'job_applications', action: 'new' %>
+<br>
+<br>
+<% if flash[:notice] %>
+  <p style="color:blue"> Your application has been submitted for review. Thank you for using the App Manager Web Application. </p>
+<% else %>
+  <%= link_to 'Create Application', controller: 'job_applications', action: 'new' %>
+<% end %>
 <br>
 <br>
 <p>

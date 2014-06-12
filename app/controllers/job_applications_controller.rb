@@ -1,7 +1,7 @@
 class JobApplicationsController < ApplicationController
 
 #http_basic_authenticate_with name: "AdminUser", password: "AdminPassword", except: [:create, :new, :update, :edit]
-before_action :signed_in_user, only: [:index, :destroy]
+before_action :signed_in_user, only: [:index, :destroy, :show, :edit]
 
 def new
   @application = JobApplication.new
@@ -31,7 +31,8 @@ def create
   @application = JobApplication.new(application_params)
  
   if @application.save
-    redirect_to @application
+    #redirect_to @application
+    redirect_to root_url, notice: "You have successfully submitted your application."
   else
     render 'new'
   end
