@@ -1,0 +1,37 @@
+<p>
+  <strong>Name:</strong>
+  <%= @application.name %>
+</p>
+ 
+<p>
+  <strong>Email:</strong>
+  <%= @application.email %>
+</p>
+
+<p>
+  <strong>What’s the coolest problem you’ve solved that’s applicable to the role you’d like to
+have with FoodLogiQ? Why should we think it’s cool, too?</strong>
+<br>
+  <%= @application.answer1 %>
+</p>
+
+<p>
+  <strong>Describe the environment that would exist at your dream job. The culture, people,
+office, tools, etc. whatever
+details you think would make it awesome. Don’t
+worry about trying to describe us so we think you think we’re your dream
+employer; we’re more interested in you, not us.</strong>
+<br>
+  <%= @application.answer2 %>
+</p>
+
+<p>
+  <strong>What design and development assumptions and decisions went into your solution
+for Step 1?</strong>
+<br>
+  <%= @application.answer3 %>
+</p>
+<br>
+<%= link_to 'Back', job_applications_path %>      <%= link_to 'Edit', edit_job_application_path(@application) %>
+<br>
+<%= link_to 'Home', controller: 'welcome' %>

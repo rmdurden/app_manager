@@ -1,0 +1,47 @@
+<%= form_for @application do |f| %>
+<% if @application.errors.any? %>
+  <div id="error_messages">
+    <h2><%= pluralize(@application.errors.count, "error") %> prohibited
+      this application from being saved:</h2>
+    <ul>
+    <% @application.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+<p>
+    <%= f.label :name %><br>
+    <%= f.text_field :name %>
+  </p>
+
+  <p>
+    <%= f.label :email %><br>
+    <%= f.text_area :email %>
+  </p>
+
+  <p>
+1) What’s the coolest problem you’ve solved that’s applicable to the role you’d like to
+have with FoodLogiQ? Why should we think it’s cool, too?<br>
+    <%= f.text_area :answer1 %>
+  </p>
+
+  <p>
+2) Describe the environment that would exist at your dream job. The culture, people,
+office, tools, etc. whatever
+details you think would make it awesome. Don’t
+worry about trying to describe us so we think you think we’re your dream
+employer; we’re more interested in you, not us.<br>
+    <%= f.text_area :answer2 %>
+  </p>
+
+  <p>
+3) What design and development assumptions and decisions went into your solution
+for Step 1?<br>
+    <%= f.text_area :answer3 %>
+  </p>
+
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
