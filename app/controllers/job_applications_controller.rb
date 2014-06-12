@@ -1,6 +1,6 @@
 class JobApplicationsController < ApplicationController
 
-http_basic_authenticate_with name: "AdminUser", password: "AdminPassword", except: [:create, :edit]
+http_basic_authenticate_with name: "AdminUser", password: "AdminPassword", except: [:create, :new, :update, :edit]
 
 def new
   @application = JobApplication.new
