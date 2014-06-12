@@ -1,5 +1,6 @@
 class JobApplication < ActiveRecord::Base
-  validates :email, uniqueness: true
+  email_regex = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :email, uniqueness: true, format: { with: email_regex }
   validates :name, presence: true, on: 'create'
   validates :email, presence: true, on: 'create'
   validates :answer1, presence: true, on: 'create'
