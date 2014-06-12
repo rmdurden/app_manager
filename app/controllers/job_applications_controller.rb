@@ -1,6 +1,7 @@
 class JobApplicationsController < ApplicationController
 
-http_basic_authenticate_with name: "AdminUser", password: "AdminPassword", except: [:create, :new, :update, :edit]
+#http_basic_authenticate_with name: "AdminUser", password: "AdminPassword", except: [:create, :new, :update, :edit]
+before_action :signed_in_user, only: [:index, :destroy, :show]
 
 def new
   @application = JobApplication.new
@@ -48,6 +49,10 @@ end
 private
   def application_params
     params.require(:job_application).permit(:name,:email,:answer1,:answer2,:answer3)
+  end
+
+  def signed_in_user
+    redirect_to signin_url, notice: "Please sign in." unless signed_in?
   end
 
 end

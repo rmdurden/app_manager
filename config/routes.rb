@@ -55,4 +55,7 @@ Rails.application.routes.draw do
   #   end
   root 'welcome#index'
   resources :job_applications
+  resources :sessions, only: [:new, :create, :destroy]
+  match '/signin',  to: 'sessions#new',         via: 'get'
+  match '/signout', to: 'sessions#destroy',     via: 'delete'
 end

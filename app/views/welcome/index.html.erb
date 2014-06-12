@@ -7,4 +7,6 @@ App Manager is an app created to submit, view, and manage job applications submi
 <%= link_to 'Create Application', controller: 'job_applications', action: 'new' %>
 <br>
 <br>
-<%= link_to 'View Applications (Admin Only)', controller: 'job_applications' %>
+<% if signed_in? %>
+  <%= link_to 'View Applications (Admin Only)', controller: 'job_applications' %>
+<% end %>
