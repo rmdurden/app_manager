@@ -40,3 +40,4 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin]
 
 #User added gems
 gem 'rails_12factor', group: :production
+gem 'bcrypt'
