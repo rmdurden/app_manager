@@ -1,11 +1,15 @@
-<h2>Welcome to App Manager</h2>
+<h1 style="text-align:center">Welcome to App Manager</h1>
 <hr>
 <br>
 <p>
-App Manager is an app created to submit, view, and manage job applications submitted by potential future employees. Click the link below to proceed to the App Manager Web Application.
+App Manager is an app created to submit, view, and manage job applications submitted by potential future employees. Click the 'Create Application' link below to submit a job application. 
 </p>
 <%= link_to 'Create Application', controller: 'job_applications', action: 'new' %>
 <br>
+<br>
+<p>
+Administrator options can be reached by first signing in via the "Sign in" link located at the top of the page.
+</p>
 <br>
 <% if signed_in? %>
   <%= link_to 'View Applications (Admin Only)', controller: 'job_applications' %>

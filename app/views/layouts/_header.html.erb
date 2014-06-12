@@ -1,15 +1,13 @@
 <header class="navbar navbar-fixed-top navbar-inverse">
   <div class="navbar-inner">
-    <div class="container">
+    <div class="container" style="text-align:right">
       <nav>
-        <ul class="nav pull-right">
-          <li><%= link_to "Home", root_path %></li>
-          <% if signed_in? %>
-            <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-          <% else %>
-            <li><%= link_to "Sign in", signin_path %></li>
-          <% end %>
-        </ul>
+        <%= link_to "Home", root_path %>
+        <% if signed_in? %>
+          <%= link_to "Sign out", signout_path, method: "delete" %>
+        <% else %>
+          <%= link_to "Sign in", signin_path %>
+        <% end %>
       </nav>
     </div>
   </div>

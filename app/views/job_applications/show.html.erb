@@ -1,4 +1,4 @@
-<h1> Job Application for <%= @application.name %> </h1><hr>
+<h1 style="text-align:center"> Job Application for <%= @application.name %> </h1><hr>
 <p>
   <strong>Name:</strong>
   <%= @application.name %>
@@ -33,6 +33,6 @@ for Step 1?</strong>
   <%= @application.answer3 %>
 </p>
 <br>
-<%= link_to 'Back', job_applications_path %>      <%= link_to 'Edit', edit_job_application_path(@application) %>
+<% if signed_in? %> <%= link_to 'Back', job_applications_path %> <% end %>     <%= link_to 'Edit', edit_job_application_path(@application) %>
 <br>
 <%= link_to 'Home', controller: 'welcome' %>
