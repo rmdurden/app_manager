@@ -13,11 +13,11 @@
     <tr>
       <td><%= application.name %></td>
       <td><%= application.email %></td>
-      <td><%= application.answer1 %></td>
-      <td><%= application.answer2 %></td>
-      <td><%= application.answer3 %></td>
+      <td><%= application.answer1[0..20] + "..." %></td>
+      <td><%= application.answer2[0..20] + "..." %></td>
+      <td><%= application.answer3[0..20] + "..." %></td>
       <td><%= link_to 'Show', job_application_path(application) %></td>
-      <td><%= link_to 'Destroy', job_application_path(application), method: 'delete', data: { confirm: 'Are you sure you wish to delete this application?' } %></td>
+      <td><%= link_to 'Delete', job_application_path(application), method: 'delete', data: { confirm: 'Are you sure you wish to delete this application?' } %></td>
     </tr>
   <% end %>
 </table>
