@@ -7,6 +7,7 @@
     <th>Question 1</th>
     <th>Question 2</th>
     <th>Question 3</th>
+    <th>Submitted On</th>
   </tr>
  
   <% @application.each do |application| %>
@@ -16,6 +17,7 @@
       <td><%= application.answer1[0..20] + "..." %></td>
       <td><%= application.answer2[0..20] + "..." %></td>
       <td><%= application.answer3[0..20] + "..." %></td>
+      <td><%= application.created_at.to_s[/[^\s]+/] %></td> 
       <td><%= link_to 'Show', job_application_path(application) %></td>
       <td><%= link_to 'Delete', job_application_path(application), method: 'delete', data: { confirm: 'Are you sure you wish to delete this application?' } %></td>
     </tr>

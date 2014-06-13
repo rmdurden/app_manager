@@ -13,7 +13,7 @@
   <strong>What’s the coolest problem you’ve solved that’s applicable to the role you’d like to
 have with FoodLogiQ? Why should we think it’s cool, too?</strong>
 <br>
-  <%= h(@application.answer1).gsub(/\n/,'<br>') %>
+  <%= simple_format(h(@application.answer1)) %>
 </p>
 
 <p>
@@ -23,14 +23,14 @@ details you think would make it awesome. Don’t
 worry about trying to describe us so we think you think we’re your dream
 employer; we’re more interested in you, not us.</strong>
 <br>
-  <%= h(@application.answer2).gsub(/\n/,'<br>') %>
+  <%= simple_format(h(@application.answer2)) %>
 </p>
 
 <p>
   <strong>What design and development assumptions and decisions went into your solution
 for Step 1?</strong>
 <br>
-  <%= h(@application.answer3).gsub(/\n/,'<br>') %>
+  <%= simple_format(h(@application.answer3)) %>
 </p>
 <br>
 <% if signed_in? %> <%= link_to 'Back', job_applications_path %> <% end %>
