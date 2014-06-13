@@ -1,15 +1,11 @@
-<header class="navbar navbar-fixed-top navbar-inverse">
-  <div class="navbar-inner">
-    <div class="container" style="text-align:right">
-      <nav>
-        <%= link_to "Home", root_path %>
-        <% if signed_in? %>
-          <%= link_to "Sign out", signout_path, method: "delete" %>
-        <% else %>
-          <%= link_to "Sign in", signin_path %>
-        <% end %>
-      </nav>
-    </div>
+<header>
+  <div style="text-align:right">
+    <%= link_to "Home", root_path %>
+    <% if signed_in? %>
+      <%= link_to "Sign out", signout_path, method: "delete" %>
+    <% else %>
+      <%= link_to "Sign in", signin_path %>
+    <% end %>
   </div>
 <br>
 <% flash.each do |name, msg| -%>
